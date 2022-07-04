@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Validator;
 
 class LoginController extends Controller
 {
@@ -43,12 +44,13 @@ class LoginController extends Controller
         $input = $request->all();
 
         $this->validate($request, [
-            'username' => 'require|username',
-            'password' => 'require'
+            'username' => 'required',
+            'password' => 'required'
         ],[
-            'username.require' => '* กรุณากรอก Username',
-            'password.require' => '* กรุณากรอก Password'
-        ]);
+            'username.required => * กรุณากรอก Username',
+            'Password.required => * กรุณากรอก Password'
+        ]
+        );
 
         if(auth()->attempt(array('username' => $input['username'],'password' => $input['password']))){
             if(auth()->user()->email_varified != ''){

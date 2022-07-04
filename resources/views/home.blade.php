@@ -16,7 +16,7 @@
 
                     {{ __('You are logged in!') }}
 
-                    You are normal user.
+                    You are normal Home.
                 </div>
             </div>
         </div>
