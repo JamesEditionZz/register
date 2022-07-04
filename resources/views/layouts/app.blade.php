@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
-    <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -71,5 +70,6 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
