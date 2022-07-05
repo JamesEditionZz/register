@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use PhpParser\Node\Expr\FuncCall;
 
 class VerificationController extends Controller
@@ -43,5 +45,11 @@ class VerificationController extends Controller
 
     public function verifiedsuccess(){
         return view('/auth.verifiedsuccess');
+    }
+
+    public function verifiedsuccessout(Request $request)
+    {
+        Auth::logout();
+        return redirect('/login');
     }
 }

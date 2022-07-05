@@ -11,14 +11,18 @@
                     </div>
                   <h3 class=" text-center mt-4">ยืนยันตัวตนสำเร็จ!</h3>
                     <div class=" text-center mt-5 ">
-                        <a href="{{ route('login') }}"><button class="btn btn-danger" style="width: 120px; height:60px; font-size: 18px" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">เข้าสู่ระบบ</button></a>
+                        <button class="btn btn-danger" style="width: 120px; height:60px; font-size: 18px" onclick="outlog()">เข้าสู่ระบบ</button>
                       </div>
-                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                 @csrf
+                      <form id="out" action="{{ route('verifiedsuccessout') }}" method="POST" class="d-none">
+                              @csrf
                       </form>
                 </div>
               </div>
             </div>
         </div>
+        <script>
+          function outlog() {
+            document.getElementById('out').submit();
+          }
+        </script>
 @endsection

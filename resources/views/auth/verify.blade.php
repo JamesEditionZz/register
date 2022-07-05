@@ -12,7 +12,7 @@
                     </div>
                     @endif
                     <div class="logo1 text-center">
-                        <a><img src="{{ asset('/img/00200.svg') }}" alt="" width="500"></a>
+                        <a><img src="{{ asset('/img/00200.svg') }}" alt="" width="400"></a>
                     </div>
                     <h3 class=" text-center mt-3">ลงทะเบียนสำเร็จ!</h3>
                     <p class="text-center">Cloud Site ได้ทำการส่ง Verification Email ไปที่ : {{'(คุณจะได้รับอีเมลภายใน24 ชั่วโมง)'}}

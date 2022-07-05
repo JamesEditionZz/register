@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Providers\RouteServiceProvider;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -43,22 +44,23 @@ class LoginController extends Controller
     public function login(Request $request){
         $input = $request->all();
 
-        $this->validate($request, [
-            'username' => 'required',
-            'password' => 'required'
+        $request->validate([
+            'username'=>'required',
+            'password'=>'required',
         ],[
-            'username.required => * กรุณากรอก Username',
-            'Password.required => * กรุณากรอก Password'
-        ]
-        );
+            'username.required' => 'ไม่พบ Username ดังกล่าวในระบบ',
+            'password.required' => 'Password ไม่ถูกต้อง',
+        ]);
         if(auth()->attempt(array('username' => $input['username'],'password' => $input['password']))){
             if(auth()->user()->email_verified_at != ''){
                 return redirect()->route('user.index');
             }else{
-                return redirect()->route('home');
+                return redirect()->route('login');
             }
         }else{
-            return redirect()->route('login')->with('error', 'Username หรือ Password ไม่ถูกต้อง');
+            return redirect()->route('login')->with('error', 'ไม่พบ Username ดังกล่าวในระบบ');
         }
     }
+
+    
 }
