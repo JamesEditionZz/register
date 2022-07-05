@@ -50,11 +50,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'firstname' => ['required', 'string', 'max:255'],
-            'lastname' => ['required', 'string', 'max:255'],
-            'username' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255' , 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],[
+            'username.unique' => 'Username นี้มีผู้ใช้แล้ว',
+            'email.unique' => 'อีเมล์นี้เคยใช้ลงทะเบียนไปแล้ว',
+            'password.min:8' => 'รหัสผ่านต้องมีอย่างน้อย 8 ตัว',
+            'password.confirmed' => 'Password ไม่ตรงกัน',
         ]);
     }
 

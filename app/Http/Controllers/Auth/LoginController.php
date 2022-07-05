@@ -51,7 +51,6 @@ class LoginController extends Controller
             'Password.required => * กรุณากรอก Password'
         ]
         );
-
         if(auth()->attempt(array('username' => $input['username'],'password' => $input['password']))){
             if(auth()->user()->email_varified != ''){
                 return redirect()->route('user.index');
