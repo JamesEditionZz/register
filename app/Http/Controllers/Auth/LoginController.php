@@ -52,7 +52,7 @@ class LoginController extends Controller
         ]
         );
         if(auth()->attempt(array('username' => $input['username'],'password' => $input['password']))){
-            if(auth()->user()->email_varified != ''){
+            if(auth()->user()->email_verified_at != ''){
                 return redirect()->route('user.index');
             }else{
                 return redirect()->route('home');

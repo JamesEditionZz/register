@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,6 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/user',[HomeController::class, 'user'])->name('user.index');
+
+Route::get('/send-mailverified', [App\Http\Controllers\sendmailcontroller::class, 'sendNotifications'])->name('sendmail');
+Route::get('/verifiedsuccess', [VerificationController::class, 'verifiedsuccess'])->name('verifiedsuccess');

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ asset('/img/Black.png') }}" alt="" width="180">
@@ -43,8 +43,8 @@
                                 </li>
                             @endif
                         @else
-                                <a href="{{  route('logout') }}"><button class="btn btn-dark" style="width: 100px; height: 50px" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">{{ 'เข้าสู่ระบบ' }}</button></a>
+                                <a href="{{  route('logout') }}"><button class="btn btn-dark" style="width: 150px; height: 50px" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">{{ 'กลับสู่หน้าหลัก' }}</button></a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                  @csrf
                             </form>

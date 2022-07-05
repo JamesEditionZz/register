@@ -4,7 +4,7 @@
 <style>
     .linee {
         /* border: 1px solid red; */
-        margin: 60px 100px 100px 100px;
+        margin: 40px 100px 100px 100px;
     }
 
     .topp {
@@ -83,13 +83,13 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-4">
                         <div class="col">
                             <label for="password-confirm">{{ __('Confirm Password') }}</label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         </div>
                     </div>
-                    <div class="row mb-3">
+                    <div class="row mb-4">
                         <div class="col" align="center">
                         @error('checkbox')
                             <span class="invalid-feedback" role="alert">
@@ -102,7 +102,7 @@
 
                     <div class="row mb-0">
                         <div class="col" align="center">
-                            <button type="submit" class="btn btn-danger">{{ ('ลงทะเบียน') }}</button>
+                            <button type="submit" class="btn btn-danger" style="width: 110px; height: 40px">{{ ('ลงทะเบียน') }}</button>
                         </div>
                     </div>
                 </form>

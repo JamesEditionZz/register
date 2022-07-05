@@ -17,6 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
+    public const WAIT = '/verifiedsuccess';
     public const HOME = '/home';
 
     /**
