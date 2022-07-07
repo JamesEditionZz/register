@@ -1,8 +1,9 @@
 @extends('layouts.login')
 
 @section('content')
+
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="margin: 0px 100px 0px 100px;">
         <div class="col-md-8">
             <div class="header mt-5" align="center">
                 <h1>{{ ('เข้าสู่ระบบ Cloud Site') }}</h1>
