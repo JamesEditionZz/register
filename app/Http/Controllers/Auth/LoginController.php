@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/user';
 
     /**
      * Create a new controller instance.
@@ -52,10 +52,10 @@ class LoginController extends Controller
             'password.required' => 'Password ไม่ถูกต้อง',
         ]);
         if(auth()->attempt(array('username' => $input['username'],'password' => $input['password']))){
-            if(auth()->user()->email_verified_at != ''){
-                return redirect()->route('user.index');
+            if(auth()->user()->status == 99){
+                return redirect()->route('user.admin');
             }else{
-                return redirect()->route('login');
+                return redirect()->route('user.index');
             }
         }else{
             return redirect()->route('login')->with('error', 'ไม่พบ Username ดังกล่าวในระบบ');

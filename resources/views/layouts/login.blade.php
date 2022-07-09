@@ -33,7 +33,7 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}"><button class="btn btn-dark" style="width: 120px; height: 50px">{{ __('ลงทะเบียน') }}</button></a>
+                            <a class="nav-link" href="{{ route('register') }}"><button class="btn btn-dark" style="width: 120px; height: 50px">{{ __('ลงทะเบียน') }}</button></a>
                         </li>
                     </ul>
                 </div>

@@ -1,7 +1,6 @@
 @extends('layouts.login')
 
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center" style="margin: 0px 100px 0px 100px;">
         <div class="col-md-8">
