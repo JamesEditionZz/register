@@ -2,29 +2,38 @@
 
 @section('content')
 
+<?php
+// echo '<pre>';
+// echo print_r($packageID);
+// echo '</pre>';
+?>
+
+<style>
+    .linee {
+        /* border: 1px solid red; */
+        width: 90%;
+        margin-top: 5.5%;
+        margin-left: 1%;
+    }
+
+    .lineee {
+        /* border: 1px solid red; */
+        width: 92%;
+        background-color: #DCDCDC;
+        /* margin-left: 0px; */
+    }
+    .userline{
+        /* border: 1px solid red; */
+        margin-right: 6%;
+    }
+</style>
+
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-2 col-xl-1 px-sm-0 px-0 bg-danger">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <div class="dropdown pb-4 mt-3">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">{{ Auth::user()->username }}</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="{{  route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">{{ 'ออกจากระบบ' }}</></a></li>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </ul>
-                </div>
+            <div class="mt-3"><a class="navbar-brand" href="#pablo"><h4>CloudSite</h4></a></div>
+            <p></p>
                 <div class="card" style="width: 7rem;"></div>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
@@ -54,15 +63,57 @@
                 <hr>
             </div>
         </div>
+        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent lineee" style="margin: 0px 160px;">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <div class="navbar-toggle">
+                        <button type="button" class="navbar-toggler">
+                            <span class="navbar-toggler-bar bar1"></span>
+                            <span class="navbar-toggler-bar bar2"></span>
+                            <span class="navbar-toggler-bar bar3"></span>
+                        </button>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar navbar-kebab"></span>
+                    <span class="navbar-toggler-bar navbar-kebab"></span>
+                    <span class="navbar-toggler-bar navbar-kebab"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end userline" id="navigation">
+                    <div class="dropdown pb-4 mt-3">
+                        <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">{{ Auth::user()->username }}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{  route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">{{ 'ออกจากระบบ' }}</></a></li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
         @if($package == '')
-        <div class="col py-3 textline" style="background-color: #DCDCDC;">
+        <div class="col py-3 textline" style="background-color: #F8F8FF;">
             <h3 align="center">{{'กรุณาเลือกซื้อแพ็คเกจ'}}</h3>
             <h4 align="center"><a href="{{ Route('packagemonth') }}" style="color: red;">{{'รายละเอียดแพ็คเกจแบบรายเดือน'}}</a>{{' / '}}<a href="{{ Route('packageyear') }}">{{'รายละเอียดแพ็คเกจแบบรายปี'}}</a></h4>
         </div>
         @else
-        <div class="col py-3 textline" style="background-color: #DCDCDC;">
+        <div class="col py-3 textline" style="background-color: #F8F8FF;">
+
             <body>
-                <div class="py-1 mt-5">
+                <div class="py-1" style="margin-top: 6%;">
                     <h4 align="center">{{'คุณกำลังใช้แพ็คเกจ '}} @foreach ($package as $pack) {{ $pack->price }} @endforeach</h4>
                     <div class="container mt-3">
                         <div class="row mb-3">

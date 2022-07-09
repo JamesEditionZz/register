@@ -11,14 +11,21 @@
 <style>
     .linee {
         /* border: 1px solid red; */
-        width: 91.5%;
-        margin-left: 0px;
+        width: 90%;
+        margin-top: 5.5%;
+        margin-left: 1%;
     }
 
     .lineee {
-        border: 1px solid red;
-        /* width: 91.5%;
-        margin-left: 0px; */
+        /* border: 1px solid red; */
+        width: 92%;
+        background-color: #DCDCDC;
+        /* margin-left: 0px; */
+    }
+
+    .userline {
+        /* border: 1px solid red; */
+        margin-right: 6%;
     }
 </style>
 
@@ -26,25 +33,10 @@
     <div class="row flex-nowrap" style="background-color: #F5F5F5;">
         <div class="col-auto col-md-2 col-xl-1 px-sm-0 px-0 bg-danger">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <div class="dropdown pb-4 mt-3">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">{{ Auth::user()->username }}</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="{{  route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">{{ 'ออกจากระบบ' }}</></a></li>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </ul>
-                </div>
+                <div class="mt-3"><a class="navbar-brand" href="#pablo">
+                        <h4>CloudSite</h4>
+                    </a></div>
+                <p></p>
                 <div class="card" style="width: 7rem;"></div>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
@@ -68,12 +60,37 @@
                             </ul>
                         </div>
                     </li>
-
-
                 </ul>
                 <hr>
             </div>
         </div>
+        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent lineee" style="margin: 0px 160px;">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse justify-content-end userline" id="navigation">
+                    <div class="dropdown pb-4 mt-3">
+                        <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">{{ Auth::user()->username }}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{  route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">{{ 'ออกจากระบบ' }}</></a></li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
         @if($packageID == '0')
         <div class="col py-3 textline mt-5">
             <h3 align="center">{{'กรุณาเลือกซื้อแพ็คเกจ'}}</h3>
@@ -81,16 +98,16 @@
         </div>
         @else
         <div class="row linee">
-            <div class="col-lg-3 col-md-6 col-sm-6 mt-3">
+            <div class="col-lg-2 col-md-6 col-sm-6 mt-3">
                 <div class="card card-stats">
-                    <div class="card-body ">
+                    <div class="card-body">
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                <i class="fas fa-camera fa-10x"></i>
+                                    <img src="{{ asset('/icon/hdd.svg') }}" alt="" width="100px">
                                 </div>
                             </div>
-                            <div class="col-7 col-md-8">
+                            <div class="col-7 col-md-7">
                                 <div class="numbers">
                                     <p class="card-category" align="right">เหลือพื้นที่</p>
                                     <p class="card-title" align="right">150GB
@@ -109,7 +126,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3 py-5 textline" align="center">
+
+            <!-- <div class="col-3 py-5 textline" align="center">
                 <h4>แพ็คเกจที่คุณใช้งานอยู่ตอนคือ
                     <table class="table table-striped mt-3">
 
@@ -252,10 +270,10 @@
                                 <img src="{{ asset('/img/danger.png') }}" width="30px">
                                 @endif
                             </td>
-                        </tr>
+                        </tr> -->
 
-                        <!-- statement James -->
-                        @elseif($pack->price != 'Free')
+            <!-- statement James -->
+            <!-- @elseif($pack->price != 'Free')
                         <tr>
                             <td align="center">
                                 <h4>{{ $pack->price }}{{' บาท'}}{{' / '}} {{$pack->mm}}</h4>
@@ -366,10 +384,7 @@
                         @endforeach
                     </table>
                 </h4>
-            </div>
-            <div class="col mt-5">
-                {{'test'}}
-            </div>
+            </div> -->
         </div>
     </div>
     @endif
