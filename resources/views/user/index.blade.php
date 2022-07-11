@@ -27,6 +27,9 @@
         /* border: 1px solid red; */
         margin-right: 6%;
     }
+    .iconline{
+        border: 1px solid red;
+        }
 </style>
 
 <div class="container-fluid">
@@ -104,13 +107,13 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <img src="{{ asset('/icon/hdd.svg') }}" alt="" width="100px">
+                                    <img src="{{ asset('/icon/hdd.svg') }}" alt="" width="90px">
                                 </div>
                             </div>
                             <div class="col-7 col-md-7">
                                 <div class="numbers">
-                                    <p class="card-category" align="right">เหลือพื้นที่</p>
-                                    <p class="card-title" align="right">150GB
+                                    <p class="card-category" align="right">{{'เหลือพื้นที่'}}</p>
+                                    <p class="card-title" align="right">{{'150GB'}}
                                     </p>
                                     <p>
                                     </p>
@@ -121,10 +124,156 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-refresh"></i> Update Now
+                            <i class="fa fa-refresh"></i> {{'Update Date'}}
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 mt-3">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <img src="{{ asset('/icon/menu-up.svg') }}" alt="" width="90px">
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-7">
+                                <div class="numbers">
+                                    <p class="card-category" align="right">{{'เมนูที่ใช้ได้'}}</p>
+                                    <p class="card-title" align="right">{{'10 เมนู'}}
+                                    </p>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-refresh"></i> {{'Update Date'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6 mt-3">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <img src="{{ asset('/icon/images.svg') }}" alt="" width="90px">
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-7">
+                                <div class="numbers">
+                                    <p class="card-category" align="right">{{'ทำ Arkwork'}}</p>
+                                    <p class="card-title" align="right">{{'1 ชิ้นเดือน'}}
+                                    </p>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-refresh"></i> {{'Update Date'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-6 col-sm-6 mt-3">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <img src="{{ asset('/icon/upc.svg') }}" alt="" width="90px">
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-7">
+                                <div class="numbers">
+                                    <p class="card-category" align="right">{{'Tracking'}}</p>
+                                    <p class="card-title" align="right">{{'1 / เดือน'}}
+                                    </p>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-refresh"></i> {{'Update Date'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6 mt-3">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <img src="{{ asset('/icon/box2.svg') }}" alt="" width="90px">
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-7">
+                                <div class="numbers">
+                                    <p class="card-category" align="right">{{'สินค้า'}}</p>
+                                    <p class="card-title" align="right">{{'50 / ชิ้น'}}
+                                    </p>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-refresh"></i> {{'Update Date'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 mt-3">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <img src="{{ asset('/icon/file-earmark-bar-graph.svg') }}" alt="" width="90px">
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-7">
+                                <div class="numbers">
+                                    <p class="card-category" align="right">{{'เปลียนข้อมูล / รูปภาพ'}}</p>
+                                    <p class="card-title" align="right">{{'1 ชิ้น / เดือน'}}
+                                    </p>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-refresh"></i> {{'Update Date'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                test
             </div>
 
             <!-- <div class="col-3 py-5 textline" align="center">
